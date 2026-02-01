@@ -1,0 +1,16 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "This is the backend server that your TrainStudent Android app talks to. It provides: - **Northern 50% promo codes** via plus-addressing trick - **Seatfrog Secretfare** cheap tickets - **Avanti UNiDAYS** discounted fares - **Grand Central student discount** form automation - **Quidco/TopCashback** integration for extra savings - **Live train times** with discounts applied",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "convex": "^1.31.7"
+  }
+}

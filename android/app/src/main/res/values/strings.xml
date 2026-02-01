@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">TrainStudent</string>
+    
+    <!-- Accessibility Service -->
+    <string name="accessibility_service_label">TrainStudent Auto-Apply</string>
+    <string name="accessibility_service_description">TrainStudent uses this service to automatically apply discount codes and promo vouchers in train booking apps like Northern, TPE, Trainline, and others.\n\nThis allows TrainStudent to:\n• Find promo code input fields\n• Auto-fill discount codes\n• Click apply/redeem buttons\n\nYour data stays on your device. TrainStudent only interacts with supported train booking apps.</string>
+</resources>

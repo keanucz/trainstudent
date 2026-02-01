@@ -1,0 +1,21 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "🐛 Debug on Device",
+      "type": "android",
+      "request": "launch",
+      "packageName": "com.trainstudent",
+      "activity": ".MainActivity",
+      "preLaunchTask": "📱 Build & Install Debug APK",
+      "adbPort": 5037
+    },
+    {
+      "name": "🔗 Attach to Running App",
+      "type": "android",
+      "request": "attach",
+      "packageName": "com.trainstudent",
+      "adbPort": 5037
+    }
+  ]
+}

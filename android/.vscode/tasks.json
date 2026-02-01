@@ -1,0 +1,152 @@
+{
+    "version": "2.0.0",
+    "options": {
+        "env": {
+            "JAVA_HOME": "/usr/lib/jvm/java-latest-openjdk"
+        }
+    },
+    "tasks": [
+        {
+            "label": "📱 Build & Install Debug APK",
+            "type": "shell",
+            "command": "./gradlew",
+            "args": [
+                "installDebug",
+                "--stacktrace"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "presentation": {
+                "reveal": "always",
+                "panel": "shared"
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "🚀 Run App on Device",
+            "type": "shell",
+            "command": "adb",
+            "args": [
+                "shell",
+                "am",
+                "start",
+                "-n",
+                "com.trainstudent/.MainActivity"
+            ],
+            "dependsOn": "📱 Build & Install Debug APK",
+            "presentation": {
+                "reveal": "always",
+                "panel": "shared"
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "🔄 Build Release APK",
+            "type": "shell",
+            "command": "./gradlew",
+            "args": [
+                "assembleRelease",
+                "--stacktrace"
+            ],
+            "group": "build",
+            "presentation": {
+                "reveal": "always",
+                "panel": "shared"
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "🧪 Run Unit Tests",
+            "type": "shell",
+            "command": "./gradlew",
+            "args": [
+                "testDebugUnitTest",
+                "--stacktrace"
+            ],
+            "group": {
+                "kind": "test",
+                "isDefault": true
+            },
+            "presentation": {
+                "reveal": "always",
+                "panel": "shared"
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "🧪 Run Instrumented Tests on Device",
+            "type": "shell",
+            "command": "./gradlew",
+            "args": [
+                "connectedDebugAndroidTest",
+                "--stacktrace"
+            ],
+            "group": "test",
+            "presentation": {
+                "reveal": "always",
+                "panel": "shared"
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "🧹 Clean Project",
+            "type": "shell",
+            "command": "./gradlew",
+            "args": [
+                "clean"
+            ],
+            "presentation": {
+                "reveal": "always",
+                "panel": "shared"
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "📋 List Connected Devices",
+            "type": "shell",
+            "command": "adb",
+            "args": [
+                "devices",
+                "-l"
+            ],
+            "presentation": {
+                "reveal": "always",
+                "panel": "shared"
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "📊 Show App Logs (Logcat)",
+            "type": "shell",
+            "command": "adb",
+            "args": [
+                "logcat",
+                "-v",
+                "time",
+                "--pid=$(adb shell pidof -s com.trainstudent)"
+            ],
+            "presentation": {
+                "reveal": "always",
+                "panel": "dedicated"
+            },
+            "problemMatcher": [],
+            "isBackground": true
+        },
+        {
+            "label": "🔌 Uninstall App from Device",
+            "type": "shell",
+            "command": "adb",
+            "args": [
+                "uninstall",
+                "com.trainstudent"
+            ],
+            "presentation": {
+                "reveal": "always",
+                "panel": "shared"
+            },
+            "problemMatcher": []
+        }
+    ]
+}

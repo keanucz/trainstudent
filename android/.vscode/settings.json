@@ -1,0 +1,11 @@
+{
+  "files.watcherExclude": {
+    "**/build/**": true,
+    "**/.gradle/**": true
+  },
+  "files.exclude": {
+    "**/.gradle": true,
+    "**/build": true
+  },
+  "java.configuration.updateBuildConfiguration": "automatic"
+}
